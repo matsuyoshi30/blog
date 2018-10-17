@@ -15,7 +15,9 @@ hasCJKLanguage = true
 	author = "memoyoshi"
 	# description = "Site Description"
 	# bio = "author biography"
-  avatar = ""
+
+  avatarLink = "https://www.twitter.com/matsuyoshi30/"
+
 
 	twitter = "matsuyoshi30"
 
