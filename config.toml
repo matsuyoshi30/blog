@@ -5,12 +5,17 @@ title = "memoyoshi"
 theme = "hugo-theme-cactus-plus"
 googleAnalytics = "your_google_analytics_id"
 # Set the value to true if your site include CJK (Chinese, Japanese, and Korean languages) characters
-hasCJKLanguage = false
+hasCJKLanguage = true
+
+[permalinks]
+	post = "/:year/:month/:day/:filename/"
+	code = "/:filename/"
 
 [params]
 	author = "memoyoshi"
 	# description = "Site Description"
 	# bio = "author biography"
+  avatar = ""
 
 	twitter = "matsuyoshi30"
 
@@ -25,13 +30,6 @@ hasCJKLanguage = false
 	useDescriptionReplaceSummary = false
 
 	enableGoogleAnalytics = true
-	enableBaiduAnalytics = false
-	# Set the value to your baidu analysis code if you want to use baidu analytics
-	# baiduAnalytics = 'your_baidu_analysis_code'
-
-	enableTwitterCard = true
-	# The url for twitter card image, default is avatar.png in static/images directory
-	twitterCardImage = ""
 
 	# Add custom assets with their paths relative to the static folder
 	customCSS = []
@@ -43,8 +41,6 @@ hasCJKLanguage = false
 	# Navigation links
 	home = ""
 	about = ""
-	archive = ""
-	subscribe = ""
 
 	olderPosts = ""
 	newerPosts = ""
@@ -57,7 +53,6 @@ hasCJKLanguage = false
 	# Share
 	enableShare = true
 	tweet = ""
-	share = ""
 
 	# 404 page
 	title404 = ""
@@ -66,10 +61,9 @@ hasCJKLanguage = false
 	# Choose a font for the social icons in the footer. Either "mono-social" or "font-awesome"
 	iconFont = "font-awesome"
   # The social icons can be styled differently if you use mono as font - circle, rounded, or empty
-  socialIconStyle = ""
-
+  socialIconStyle = "circle"
 
 # Add additional social link entries underneath
 [social]
-	twitter-square = "https://www.twitter.com/nodejh"
-	github-square = "https://www.github.com/nodejh"
+	twitter-square = "https://www.twitter.com/matsuyoshi30/"
+	github-square = "https://www.github.com/matsuyoshi30/"
