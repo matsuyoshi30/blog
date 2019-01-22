@@ -1,9 +1,8 @@
 +++
-title = "Salad Chicken"
-date = 2018-12-04T00:03:52+09:00
-tags = [""]
-categories = ["Food"]
-draft = false
+title= "Salad Chicken"
+date= 2018-12-04T00:03:52+09:00
+categories= ["Food"]
+draft= true
 +++
 
 本日からダイエットしてみることにした。  
