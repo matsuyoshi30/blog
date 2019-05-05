@@ -3,6 +3,7 @@ baseurl = "https://matsuyoshi30.github.io/"
 languageCode = "ja-jp"
 title = "memoyoshi"
 theme = "hugo-zen"
+copyright = "matsuyoshi All rights reserved."
 # Set the value to true if your site include CJK (Chinese, Japanese, and Korean languages) characters
 
 [permalinks]
@@ -10,6 +11,6 @@ theme = "hugo-zen"
 	code = "/:filename/"
 
 [params]
-	author = "memoyoshi"
+	author = "matsuyoshi"
   logo = "/images/icon.jpg"
   twitter = "https://twitter.com/matsuyoshi30"
