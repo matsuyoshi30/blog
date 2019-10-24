@@ -24,7 +24,7 @@ copyright = "matsuyoshi All rights reserved."
   favicon = "favicon.ico"
 
   [params.logo]
-  url = "/images/icon.jpg"
+  url = "icon.jpg"
   width = 50
   height = 50
   alt = "Logo"
