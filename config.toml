@@ -17,7 +17,7 @@ disableKinds = ["taxonomy", "taxonomyTerm", "section", "404"]
   url = "https://twitter.com/matsuyoshi30"
 
 [params]
-  mainSections = ["posts"]
+  mainSections = ["post"]
 	author = "matsuyoshi"
 
   favicon = "favicon.ico"
