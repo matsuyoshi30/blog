@@ -3,8 +3,7 @@ baseurl = "https://matsuyoshi30.github.io/"
 languageCode = "ja-jp"
 title = "memoyoshi"
 theme = "hugo-lithium-theme"
-copyright = "matsuyoshi All rights reserved."
-# Set the value to true if your site include CJK (Chinese, Japanese, and Korean languages) characters
+disableKinds = ["taxonomy", "taxonomyTerm", "section", "404"]
 
 [permalinks]
 	post = "/:year/:month/:day/:title/"
