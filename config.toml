@@ -2,15 +2,32 @@
 baseurl = "https://matsuyoshi30.github.io/"
 languageCode = "ja-jp"
 title = "memoyoshi"
-theme = "hugo-zen"
+theme = "hugo-lithium-theme"
 copyright = "matsuyoshi All rights reserved."
 # Set the value to true if your site include CJK (Chinese, Japanese, and Korean languages) characters
 
 [permalinks]
-	post = "/:year/:month/:day/:filename/"
-	code = "/:filename/"
+	post = "/:year/:month/:day/:title/"
+	page = "/:title/"
+
+[[menu.main]]
+  name = "About"
+  url = "/about/"
+[[menu.main]]
+  name = "Twitter"
+  url = "https://twitter.com/matsuyoshi30"
 
 [params]
+  mainSections = ["posts"]
 	author = "matsuyoshi"
-  logo = "/images/icon.jpg"
-  twitter = "https://twitter.com/matsuyoshi30"
+
+  favicon = "favicon.ico"
+
+  [params.logo]
+  url = "/images/icon.jpg"
+  width = 50
+  height = 50
+  alt = "Logo"
+
+  [params.icon]
+  url = "favicon.ico"
