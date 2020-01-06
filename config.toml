@@ -1,5 +1,5 @@
 # Site settings
-baseurl = "https://matsuyoshi30.github.io/"
+baseurl = "https://matsuyoshi30.github.io/blog/"
 languageCode = "ja-jp"
 title = "memoyoshi"
 theme = "hugo-lithium-theme"
@@ -7,8 +7,8 @@ hasCJKLanguage = true
 disableKinds = ["taxonomy", "taxonomyTerm", "section", "404"]
 
 [permalinks]
-	post = "/:year/:month/:day/:title/"
-	page = "/:title/"
+	post = "/:year/:month/:day/:filename/"
+	page = "/:filename/"
 
 [[menu.main]]
   name = "About"
