@@ -7,6 +7,7 @@ hugo -t hugo-lithium-theme
 
 # Go to public folder and add changes to git
 cd public
+mv index.xml blog/atom.xml
 git add .
 
 # commit changes
