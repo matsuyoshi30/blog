@@ -12,7 +12,7 @@ layoutdir = "layouts"
 publishdir = "public"
 
 [permalinks]
-	post = "/blog/:year/:month/:day/:filename/"
+	post = "/:year/:month/:day/:filename/"
 	page = "/:filename/"
 
 [[menu.main]]
