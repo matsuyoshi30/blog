@@ -2,7 +2,7 @@
 baseurl = "https://blog.matsuyoshi30.net/"
 languageCode = "ja-jp"
 title = "memoyoshi"
-theme = "hugo-lithium-theme"
+theme = "harbor"
 hasCJKLanguage = true
 pygmentsuseclasses = true
 disableKinds = ["taxonomy", "taxonomyTerm", "section", "404"]
