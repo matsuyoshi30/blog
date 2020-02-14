@@ -3,7 +3,7 @@
 echo "Deploying updates to GitHub ..."
 
 # Build the project
-hugo -t hugo-lithium-theme
+hugo -t harbor
 
 # Go to public folder and add changes to git
 cd public
