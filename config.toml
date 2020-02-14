@@ -5,11 +5,10 @@ title = "memoyoshi"
 theme = "harbor"
 hasCJKLanguage = true
 pygmentsuseclasses = true
-disableKinds = ["taxonomy", "taxonomyTerm", "section", "404"]
+disableKinds = ["taxonomy", "taxonomyTerm", "section"]
 
-contentdir = "content"
-layoutdir = "layouts"
-publishdir = "public"
+[Author]
+  name = "matsuyoshi30"
 
 [permalinks]
 	post = "/:year/:month/:day/:filename/"
@@ -18,13 +17,9 @@ publishdir = "public"
 [[menu.main]]
   name = "About"
   url = "/about/"
-[[menu.main]]
-  name = "Twitter"
-  url = "https://twitter.com/matsuyoshi30"
 
 [params]
   mainSections = ["post"]
-	author = "matsuyoshi"
 
   favicon = "favicon.ico"
 
