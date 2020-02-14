@@ -1,5 +1,5 @@
 # Site settings
-baseurl = "https://matsuyoshi30.github.io/"
+baseurl = "https://blog.matsuyoshi30.net/"
 languageCode = "ja-jp"
 title = "memoyoshi"
 theme = "hugo-lithium-theme"
