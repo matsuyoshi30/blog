@@ -2,7 +2,6 @@
 title = "区切り"
 date = 2019-03-31T20:21:31+09:00
 tags = ["SIer"]
-categories = ["仕事"]
 draft = false
 +++
 

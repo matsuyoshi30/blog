@@ -1,8 +1,6 @@
 +++
 title = "振り返りと抱負"
 date = 2020-01-01T08:43:02+09:00
-tags = [""]
-categories = [""]
 draft = false
 +++
 
