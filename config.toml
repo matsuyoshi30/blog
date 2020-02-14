@@ -5,7 +5,6 @@ title = "memoyoshi"
 theme = "harbor"
 hasCJKLanguage = true
 pygmentsuseclasses = true
-disableKinds = ["taxonomy", "taxonomyTerm", "section"]
 
 [Author]
   name = "matsuyoshi30"
