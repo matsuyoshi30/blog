@@ -30,10 +30,7 @@ googleAnalytics = "UA-145873405-1"
   favicon = "favicon.ico"
 
   [params.logo]
-  url = "icon.png"
+  url = "images/icon.png"
   width = 50
   height = 50
   alt = "Logo"
-
-  [params.icon]
-  url = "favicon.ico"
