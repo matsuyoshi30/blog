@@ -4,8 +4,6 @@ languageCode = "ja-jp"
 title = "memoyoshi"
 theme = "harbor"
 hasCJKLanguage = true
-pygmentsuseclasses = true
-
 googleAnalytics = "UA-145873405-1"
 
 [Author]
