@@ -6,6 +6,8 @@ theme = "harbor"
 hasCJKLanguage = true
 pygmentsuseclasses = true
 
+googleAnalytics = "UA-145873405-1"
+
 [Author]
   name = "matsuyoshi30"
 
