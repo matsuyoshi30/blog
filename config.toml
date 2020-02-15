@@ -14,16 +14,23 @@ pygmentsuseclasses = true
 	page = "/:filename/"
 
 [[menu.main]]
+  identifier = "about"
   name = "About"
   url = "/about/"
+  weight = 3
+
+[[menu.main]]
+  identifier = "tags"
+  name = "Tags"
+  url = "tags"
+  weight = 3
 
 [params]
   mainSections = ["post"]
-
   favicon = "favicon.ico"
 
   [params.logo]
-  url = "icon.jpg"
+  url = "icon.png"
   width = 50
   height = 50
   alt = "Logo"
