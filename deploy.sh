@@ -7,7 +7,6 @@ hugo -t harbor
 
 # Go to public folder and add changes to git
 cd public
-cp index.xml blog/atom.xml
 git add .
 
 # commit changes
