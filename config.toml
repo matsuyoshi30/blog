@@ -6,6 +6,9 @@ theme = "harbor"
 hasCJKLanguage = true
 googleAnalytics = "UA-145873405-1"
 
+[outputs]
+    section = ["JSON", "HTML"]
+
 [Author]
   name = "matsuyoshi30"
 
