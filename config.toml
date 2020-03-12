@@ -16,16 +16,25 @@ googleAnalytics = "UA-145873405-1"
 	post = "/:year/:month/:day/:filename/"
 	page = "/:filename/"
 
-[[menu.main]]
+[[params.nav]]
   identifier = "about"
   name = "About"
+  icon = "fas fa-user"
   url = "/about/"
   weight = 3
 
-[[menu.main]]
+[[params.nav]]
   identifier = "tags"
   name = "Tags"
+  icon = "fas fa-tag"
   url = "tags"
+  weight = 3
+
+[[params.nav]]
+  identifier = "search"
+  name = "Search"
+  icon = "fas fa-search"
+  url = "search"
   weight = 3
 
 [params]
