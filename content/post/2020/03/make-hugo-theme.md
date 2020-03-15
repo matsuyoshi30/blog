@@ -2,7 +2,7 @@
 title = "Hugo のテーマを自作した"
 date = 2020-03-15T23:52:03+09:00
 tags = [""]
-draft = true
+draft = false
 toc = true
 +++
 
