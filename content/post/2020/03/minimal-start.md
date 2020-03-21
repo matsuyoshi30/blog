@@ -80,6 +80,22 @@ pull request をモチベーションの一つにすることで、自分を成�
 
 ## あとがき
 
+先にも述べたが、問題の大小は基本的に当事者にならないと分からない。 pull request を出すことでまず当事者になる第一歩を踏み出すことが出来ると思う。
+それが結局小さいことだったとしても、まずは始めないことには形にならないという意識を持ち続けたい。最初の一歩で大きなことを成し遂げられるほど自分は天才ではないことを自覚する。
+
 今日は勝手にロールモデルにしたいと思っている ohbarye 氏の [goofi](https://github.com/ohbarye/goofi)に [pull request](https://github.com/ohbarye/goofi/pull/277) を出して、無事にマージされた。
 内容は「`target="_blank"`のリンクは`rel="noopener"`を付ける」というだけ。これまで TypeScript や Next.js は触ったことが無いが、 pull request をきっかけにこのリポジトリで勉強したいと思う。
 pull request はいい事だらけである。
+
+## 見ておくと助かるもの
+
+- 心構え
+    - [Oss貢献超入門](https://www.slideshare.net/shigemk2/oss-78585757)
+    - [貢献できるOSSの見つけ方 / How to find "Good First Issues"](https://speakerdeck.com/ohbarye/how-to-find-good-first-issues)
+    - [続・貢献できるOSSの見つけ方 / How to find "Good First Issues" part 2](https://speakerdeck.com/ohbarye/how-to-find-good-first-issues-part-2)
+    - [貢献できるOSSの見つけ方 -完結編- / How to find "Good First Issues" Final](https://speakerdeck.com/ohbarye/how-to-find-good-first-issues-final)
+-  issue 探し
+    - [goofi](https://goofi.now.sh/)
+    - [firstcontributions](https://firstcontributions.github.io/)
+    - [GitHub help wanted](http://github-help-wanted.com/)
+    - [trends](https://trends.now.sh/)
