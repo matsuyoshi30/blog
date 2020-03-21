@@ -4,4 +4,12 @@ date = 1992-11-12T11:30:00+09:00
 draft = false
 +++
 
-作成中
+```
+{
+    "handle name": "matsuyoshi30",
+    "birth": "1992-11-12",
+    "occupation": "SIer",
+    "blog description": "まとまった考えを書けるようになりたいブログ",
+    "more info": "https://matsuyoshi30.net"
+}
+```
