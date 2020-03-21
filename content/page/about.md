@@ -9,7 +9,8 @@ draft = false
     "handle name": "matsuyoshi30",
     "birth": "1992-11-12",
     "occupation": "SIer",
-    "blog description": "まとまった考えを書けるようになりたいブログ",
-    "more info": "https://matsuyoshi30.net"
+    "blog description": "まとまった考えを残すための場所（まとまっているとは限りません）"
 }
 ```
+
+その他は [profile](https://matsuyoshi30.net) へ
