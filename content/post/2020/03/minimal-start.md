@@ -17,7 +17,7 @@ GitHub の Trend は COVID-19 関係のリポジトリが多くを占めるよ�
 ここ最近は COVID-19 関連が多い。
 
 先日、東京都が公開している[新型コロナウイルス感染症対策サイト](https://stopcovid19.metro.tokyo.lg.jp/)が話題になった。
-これは今 Trend にのっているリポジトリと同様に、サイトの内容が [GitHub](https://github.com/tokyo-metropolitan-gov/covid19) に MIT ライセンスで公開されており、issue や pull request も受け付けていて、3/21時点で192人の contributor がいる。
+これは今 Trend にのっているリポジトリと同様に、サイトの内容が GitHub に MIT ライセンスで公開されており、issue や pull request も受け付けていて、3/21時点で192人の contributor がいる（[リポジトリ](https://github.com/tokyo-metropolitan-gov/covid19)）。
 今まで知らなかったのだが、ヤフーで社長を務めた宮坂学氏が副都知事であることが大きいようだ。
 IT に精通している人間が組織のトップ近くにいると、スピード感を持ってこういった対応ができるという好例だと思う。
 
@@ -34,7 +34,7 @@ IT に精通している人間が組織のトップ近くにいると、スピ�
 ## 自分でハードルを高くしない
 
 僕は普段業務でコードを書くことはほとんどない。休日に自分の興味のある分野や言語についていろいろ調べつつ、週末プロジェクト的にコードを書いている。
-ネットでは「強い」方々の会話や意見を読み、「こうなりたいな〜」などとぼんやり考えていて、同じように自分の意見を述べたりするのはまだ早いとか考えている。
+ネットでは『強い』方々の会話や意見を読み、「こうなりたいな〜」などとぼんやり考えていて、同じように自分の意見を述べたりするのはまだ早いとか考えている。
 
 pull request に対してもおんなじだ。
 むしろ、常日頃コードを書いていて自分より知識もスキルもある人のプロジェクトに対して、僕が pull request なんて出していいものなのだろうか、と考えていた。
@@ -80,6 +80,6 @@ pull request をモチベーションの一つにすることで、自分を成�
 
 ## あとがき
 
-今日は勝手にロールモデルにしたいと思っている ohbarye 氏の [goofi](https://github.com/ohbarye/goofi)に pull request を出して、無事にマージされた。
+今日は勝手にロールモデルにしたいと思っている ohbarye 氏の [goofi](https://github.com/ohbarye/goofi)に [pull request](https://github.com/ohbarye/goofi/pull/277) を出して、無事にマージされた。
 内容は「`target="_blank"`のリンクは`rel="noopener"`を付ける」というだけ。これまで TypeScript や Next.js は触ったことが無いが、 pull request をきっかけにこのリポジトリで勉強したいと思う。
 pull request はいい事だらけである。
