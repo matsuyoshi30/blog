@@ -39,6 +39,7 @@ googleAnalytics = "UA-145873405-1"
 
 [params]
   mainSections = ["post"]
+  description = "matsuyoshi30's weblog"
   favicon = "favicon.ico"
 
   [params.logo]
