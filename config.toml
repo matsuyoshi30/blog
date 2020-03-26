@@ -3,6 +3,7 @@ baseurl = "https://blog.matsuyoshi30.net/"
 languageCode = "ja-jp"
 title = "memoyoshi"
 theme = "harbor"
+paginate = 3
 hasCJKLanguage = true
 googleAnalytics = "UA-145873405-1"
 
@@ -15,6 +16,11 @@ googleAnalytics = "UA-145873405-1"
 [permalinks]
 	post = "/:year/:month/:day/:filename/"
 	page = "/:filename/"
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  archives = "archives"
 
 [[params.nav]]
   identifier = "about"
@@ -35,6 +41,13 @@ googleAnalytics = "UA-145873405-1"
   name = "Search"
   icon = "fas fa-search fa-lg"
   url = "search"
+  weight = 3
+
+[[params.nav]]
+  identifier = "archives"
+  name = "Archives"
+  icon = "fas fa-archive fa-lg"
+  url = "archives"
   weight = 3
 
 [params]
