@@ -20,7 +20,6 @@ googleAnalytics = "UA-145873405-1"
 [taxonomies]
   tag = "tags"
   category = "categories"
-  archives = "archives"
 
 [[params.nav]]
   identifier = "about"
