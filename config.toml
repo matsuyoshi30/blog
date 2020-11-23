@@ -3,12 +3,12 @@ baseurl = "https://blog.matsuyoshi30.net/"
 languageCode = "ja-jp"
 title = "memoyoshi"
 theme = "harbor"
-paginate = 3
+paginate = 5
 hasCJKLanguage = true
 googleAnalytics = "UA-145873405-1"
 
 [outputs]
-    section = ["JSON", "HTML"]
+  section = ["JSON", "HTML"]
 
 [Author]
   name = "matsuyoshi30"
