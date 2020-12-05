@@ -54,6 +54,8 @@ googleAnalytics = "UA-145873405-1"
   description = "matsuyoshi30's weblog"
   favicon = "favicon.ico"
 
+  images = ["icon.png"]
+
   [params.logo]
   url = "icon.png"
   width = 50
