@@ -8,9 +8,8 @@ draft = false
 {
     "handle name": "matsuyoshi30",
     "birth": "1992-11-12",
-    "occupation": "SIer",
-    "blog description": "まとまった考えを残すための場所（まとまっているとは限りません）"
+    "occupation": "Software Engineer",
+    "blog description": "まとまった考えを残すための場所（まとまっているとは限りません）",
+    "more info": 'https://matsuyoshi30.net'
 }
 ```
-
-その他は [profile](https://matsuyoshi30.net) へ
