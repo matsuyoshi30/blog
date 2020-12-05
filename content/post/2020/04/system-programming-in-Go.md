@@ -1,7 +1,7 @@
 +++
 title = "「Goならわかるシステムプログラミング」を読んだ"
 date = 2020-04-28T00:52:49+09:00
-tags = ["reading"]
+tags = ["reading", "golang"]
 draft = false
 toc = false
 backtotop = false
