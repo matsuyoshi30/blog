@@ -1,12 +1,12 @@
 +++
 title = "git switch からはじめる CLI ツール作成"
-date = 2020-12-06T09:00:00+09:00
+date = 2020-12-06T00:00:00+09:00
 tags = ["cli", "golang"]
 draft = false
 toc = true
 +++
 
-この記事は「[弁護士ドットコム Advent Calendar 2020](https://qiita.com/advent-calendar/2020/bengo4com)」の 6 日目の記事です。昨日は [@euxn23](https://qiita.com/euxn23) さんが XXXX について書いてました。
+この記事は「[弁護士ドットコム Advent Calendar 2020](https://qiita.com/advent-calendar/2020/bengo4com)」の 6 日目の記事です。昨日は [@euxn23](https://qiita.com/euxn23) さんの「[babel 環境における Polyfill のビルド最適化と async-await の扱い](https://blog.euxn.me/xsymsnvwjbkaaaaaaacrrg)」でした &#x1f389;。
 
 軽く自己紹介を。私は弁護士ドットコムという会社で[クラウドサイン](https://www.cloudsign.jp/)という電子契約サービスのバックエンドエンジニアをやっています。今年の9月末に前職の SIer を退職して10月に入社しました。前職ではあまりコードを書いていませんでしたが、去年の5月頃に [Gopher Dojo](https://gopherdojo.org/) という勉強会に参加したり、 Go をプライベートで書いたりしていたらいつの間にか転職していました。
 
@@ -64,7 +64,7 @@ Git 2.23 (リリースされたのは一年以上前)で `git switch` と `git r
 ドキュメントやマニュアルにもある通り、 switch や restore は実験的で挙動が変わる可能性があります ( `THIS COMMAND IS EXPERIMENTAL. THE BEHAVIOR MAY CHANGE.` ) が、これから git を使い始める人にとっては checkout でブランチもファイルも操作するより、ブランチは switch で、ファイルは restore で操作するほうが直感的で分かりやすそうです。そのうち後輩に「まだ `git checkout` なんて UNIX 哲学に反する[^1]もの使ってるんですか？」と煽られないためにも、今のうちに `git switch` に慣れておきたいところです。
 
 
-### `git switch` 矯正の道
+### 矯正の道
 
 手癖で checkout と打って Enter を押してしまうのはどうしようもないので、そのまま実行されずに機械側で矯正してくれる仕組みを検討してみます。作業端末は MacBook Pro 13-inch 2020、 OS は macOS Catalina version 10.15.7 です。
 
@@ -137,7 +137,7 @@ git: 'checkout' is not a git command. See 'git --help'.
 
 #### 道の終わり
 
-矯正の道、色々見てきましたが、個人的にいいなと思うのは2番目の養成ギプスです。1番目は方法として何となくダサいし、3番目は論外です。他に良い方法をご存知の方はぜひ教えて下さい。
+矯正の道、色々見てきましたが、個人的にいいなと思うのは2番目の養成ギプスです。1番目は方法として何となくダサいし、3番目は無いですね。一応やる人は自己責任でお願いします（やる人いないと思いますが）。他に良い方法をご存知の方はぜひ教えて下さい。
 
 まあ、 checkout がなくなるわけでもないし、無理に switch にして作業効率が落ちるくらいなら、変えずにそのまま checkout で続けた方が絶対に良いと思います（ﾃﾉﾋﾗｸﾙｰ）。
 
@@ -197,7 +197,7 @@ README にある通り、軽量かつシンプルな CLI フレームワーク�
 
 個人的には kubernetes や GitHub CLI くらい大きいものを作ることがないので、大体これを選んでいます。
 
-#### [manifoldco/promptui](github.com/manifoldco/promptui)
+#### [manifoldco/promptui](https://github.com/manifoldco/promptui)
 
 上の2つと毛色が異なり、インタラクティブな CLI ツールを作るときに選びます。 README にもありますが、フレームワークというよりもライブラリで、上の2つのような CLI フレームワークと同時に利用することができます。
 
@@ -207,7 +207,75 @@ README にある通り、軽量かつシンプルな CLI フレームワーク�
 今回作成するのは `git config user.name ...` を代替する簡単な CLI ツールです。フラグオプションは --global かどうかのみ、かついちいちユーザー名やメールアドレスを入力するのがめんどくさいという動機から作成するものなので、 CLI フレームワークは用いずにオプションは標準の flag を使用、ライブラリとして promptui を採用しました。
 
 
-### バイナリの配布
+### 実装
+
+簡単な CLI ツールなので実装において特筆する箇所はほとんどありません。今回作成するツールは git のユーザー切り替えを簡単にするものなので、ツール側で切り替える git のユーザー情報を保持しておく必要があります。今回は JSON 形式の config ファイルを作成して、必要に応じてファイルを読み書きするようにしました。 Go は実行時の OS を `runtime.GOOS` で判別できるので、以下のように OS ごとに config ファイル生成先を制御します。
+
+```go
+configDirName := "gitsu-go"
+
+switch runtime.GOOS {
+case "darwin":
+	return filepath.Join(os.Getenv("HOME"), "/Library/Preferences", configDirName)
+case "windows":
+	return filepath.Join(os.Getenv("APPDATA"), "gitsu-go")
+default:
+	if os.Getenv("XDG_CONFIG_HOME") != "" {
+		return filepath.Join(os.Getenv("XDG_CONFIG_HOME"), configDirName)
+	}
+	return filepath.Join(os.Getenv("HOME"), "/.config", configDirName)
+}
+```
+
+ツールの使い方としては、「新しい git ユーザーの追加」「 git ユーザーの切り替え」「 git ユーザーの削除」が想定できます。追加の際は情報をユーザーに入力してもらう必要があるので promptui の Prompt を使用し、切り替えや削除は config ファイルの内容から生成した git ユーザー一覧からそれぞれ選択されればよいので promptui の Select を使用します。
+
+まずはどういう操作をするのか選択させます。
+
+```go
+sel := "Select git user"
+add := "Add new git user"
+del := "Delete git user"
+
+action := promptui.Select{
+	Label: "Select action",
+	Items: []string{sel, add, del},
+}
+
+_, actionType, err := action.Run()
+if err != nil {
+    return err
+}
+```
+
+promptui の Select で選択されたものは Run() の2番目の戻り値にあります（1個目には Select の Items のインデックス）。それを確認して追加、切り替え、削除の処理を実行します。
+
+```go
+switch actionType {
+case sel:
+	if err := selectUser(); err != nil {
+		return err
+	}
+case add:
+	if err := addUser(); err != nil {
+		return err
+	}
+case del:
+	if err := deleteUser(); err != nil {
+		return err
+	}
+default:
+    return errors.New("Unknown action type")
+}
+```
+
+あとはそれぞれ実装すればよいです。選択は config を読んで promptui の Select を使うだけ。追加は promptui の Prompt で名前とメールアドレスを入力してもらい、その情報を config に追記するだけ。削除は config を読んで promptui の Select を使い、選択されたユーザーを config から消すだけです。以下デモ GIF です。
+
+![Demo](/images/demo.gif)
+
+これくらい簡単な CLI ツールであればそこまで時間かからずに実装できますので、あまり Go を書いたことのない人でも比較的取り組みやすいと思います。
+
+    
+### 配布
 
 Go を採用する理由でも述べましたが、 Go はコンパイル後シングルバイナリを生成するので配布が用意です。今回は簡単なオレオレコマンドですが、せっかく Go を採用したのでバイナリの配布までやってみます。
 
@@ -261,11 +329,11 @@ https://github.com/matsuyoshi30/gitsu
 
 今回人生で初めて Advent Calendar というものに参加してみました。業務に関わるネタでなくて少し残念な気持ちもありますが、来年もぜひ参加したいと思いますし、その際はもっと業務と絡めて興味深い話ができるよう頑張ります。
 
-明日の担当は [@shotanue](https://qiita.com/shotanue) さんです &#x1f449;。
+明日は [@shotanue](https://qiita.com/shotanue) さんです &#x1f449;。
 
 
 
 [^1]: [Do One Thing and Do It Well](https://en.wikipedia.org/wiki/Unix_philosophy#Do_One_Thing_and_Do_It_Well)
 [^2]: 原因をよく理解していないので、説明できる方教えて下さい。
 [^3]: [コメントを参照](https://github.com/git/git/blob/3a0b884caba2752da0af626fb2de7d597c844e8b/git.c#L890-L895)
-[^4]: Go 1.17 から go get が無効になるという話もあります。
+[^4]: Go 1.17 から go get が無効になるという話もあります（[mattn さんのツイート](https://twitter.com/mattn_jp/status/1331394028651257858)参照）。
