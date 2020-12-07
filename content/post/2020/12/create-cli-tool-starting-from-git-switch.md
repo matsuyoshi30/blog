@@ -61,7 +61,7 @@ Git 2.23 (リリースされたのは一年以上前)で `git switch` と `git r
 
 案の定 switch を使っている人はあまりいませんでしたが、最近 switch に移行し始めたという方も（わずかながら）いました。
 
-ドキュメントやマニュアルにもある通り、 switch や restore は実験的で挙動が変わる可能性があります ( `THIS COMMAND IS EXPERIMENTAL. THE BEHAVIOR MAY CHANGE.` ) が、これから git を使い始める人にとっては checkout でブランチもファイルも操作するより、ブランチは switch で、ファイルは restore で操作するほうが直感的で分かりやすそうです。そのうち後輩に「まだ `git checkout` なんて UNIX 哲学に反する[^1]もの使ってるんですか？」と煽られないためにも、今のうちに `git switch` に慣れておきたいところです。
+ドキュメントやマニュアルにもある通り、 switch や restore は実験的で挙動が変わる可能性があります ( `THIS COMMAND IS EXPERIMENTAL. THE BEHAVIOR MAY CHANGE.` ) が、これから git を使い始める人にとっては checkout でブランチもファイルも操作するより、ブランチは switch で、ファイルは restore で操作するほうが直感的で分かりやすそうです。そのうち後輩に「まだ `git checkout` なんて UNIX 哲学る[^1]に反するもの使ってるんですか？」と煽られないためにも、今のうちに `git switch` に慣れておきたいところです。
 
 
 ### 矯正の道
@@ -341,5 +341,5 @@ https://github.com/matsuyoshi30/gitsu
 
 [^1]: [Do One Thing and Do It Well](https://en.wikipedia.org/wiki/Unix_philosophy#Do_One_Thing_and_Do_It_Well)
 [^2]: 原因をよく理解していないので、説明できる方教えて下さい。
-[^3]: [コメントを参照](https://github.com/git/git/blob/3a0b884caba2752da0af626fb2de7d597c844e8b/git.c#L890-L895)
+[^3]: [コメント](https://github.com/git/git/blob/3a0b884caba2752da0af626fb2de7d597c844e8b/git.c#L890-L895)を参照
 [^4]: Go 1.17 から go get が無効になるという話もあります（[mattn さんのツイート](https://twitter.com/mattn_jp/status/1331394028651257858)参照）。
