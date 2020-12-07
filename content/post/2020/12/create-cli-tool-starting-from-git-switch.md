@@ -61,7 +61,7 @@ Git 2.23 (リリースされたのは一年以上前)で `git switch` と `git r
 
 案の定 switch を使っている人はあまりいませんでしたが、最近 switch に移行し始めたという方も（わずかながら）いました。
 
-ドキュメントやマニュアルにもある通り、 switch や restore は実験的で挙動が変わる可能性があります ( `THIS COMMAND IS EXPERIMENTAL. THE BEHAVIOR MAY CHANGE.` ) が、これから git を使い始める人にとっては checkout でブランチもファイルも操作するより、ブランチは switch で、ファイルは restore で操作するほうが直感的で分かりやすそうです。そのうち後輩に「まだ `git checkout` なんて UNIX 哲学る[^1]に反するもの使ってるんですか？」と煽られないためにも、今のうちに `git switch` に慣れておきたいところです。
+ドキュメントやマニュアルにもある通り、 switch や restore は実験的で挙動が変わる可能性があります ( `THIS COMMAND IS EXPERIMENTAL. THE BEHAVIOR MAY CHANGE.` ) が、これから git を使い始める人にとっては checkout でブランチもファイルも操作するより、ブランチは switch で、ファイルは restore で操作するほうが直感的で分かりやすそうです。そのうち後輩に「まだ `git checkout` なんて UNIX 哲学[^1]に反するもの使ってるんですか？」と煽られないためにも、今のうちに `git switch` に慣れておきたいところです。
 
 
 ### 矯正の道
