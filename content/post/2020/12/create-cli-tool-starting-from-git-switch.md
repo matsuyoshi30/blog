@@ -276,7 +276,7 @@ default:
 
 あとはそれぞれ実装すればよいです。選択は config を読んで promptui の Select を使うだけ。追加は promptui の Prompt で名前とメールアドレスを入力してもらい、その情報を config に追記するだけ。削除は config を読んで promptui の Select を使い、選択されたユーザーを config から消すだけです。以下デモ GIF です。
 
-![Demo](/images/demo.gif)
+![Demo](/images/2020/12/06/demo.gif)
 
 これくらい簡単な CLI ツールであればそこまで時間かからずに実装できますので、あまり Go を書いたことのない人でも比較的取り組みやすいと思います。
 
