@@ -7,6 +7,11 @@ paginate = 5
 hasCJKLanguage = true
 googleAnalytics = "UA-145873405-1"
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+    unsafe = true
+
 [outputs]
   section = ["JSON", "HTML"]
 
