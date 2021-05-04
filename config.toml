@@ -7,13 +7,16 @@ paginate = 5
 hasCJKLanguage = true
 googleAnalytics = "UA-145873405-1"
 
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-    unsafe = true
+[params]
+  mainSections = ["post"]
+  description = "matsuyoshi30's weblog"
+  favicon = "favicon.ico"
 
-[outputs]
-  section = ["JSON", "HTML"]
+[params.logo]
+  url = "icon.png"
+  width = 50
+  height = 50
+  alt = "Logo"
 
 [Author]
   name = "matsuyoshi30"
@@ -21,6 +24,9 @@ googleAnalytics = "UA-145873405-1"
 [permalinks]
 	post = "/:year/:month/:day/:filename/"
 	page = "/:filename/"
+
+[outputs]
+  section = ["JSON", "HTML"]
 
 [taxonomies]
   tag = "tags"
@@ -30,7 +36,7 @@ googleAnalytics = "UA-145873405-1"
   identifier = "about"
   name = "About"
   icon = "fas fa-user fa-lg"
-  url = "/about/"
+  url = "about"
   weight = 3
 
 [[params.nav]]
@@ -54,15 +60,7 @@ googleAnalytics = "UA-145873405-1"
   url = "archives"
   weight = 3
 
-[params]
-  mainSections = ["post"]
-  description = "matsuyoshi30's weblog"
-  favicon = "favicon.ico"
-
-  images = ["icon.png"]
-
-  [params.logo]
-  url = "icon.png"
-  width = 50
-  height = 50
-  alt = "Logo"
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+    unsafe = true
