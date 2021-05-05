@@ -1,7 +1,7 @@
 version: 0.2
 env:
   variables:
-    hugo_version: "0.79.0"
+    hugo_version: "0.58.0"
   parameter-store:
     BUCKET_NAME: "BLOG_S3_BUCKET_NAME"
     CF_DIST_ID: "BLOG_CF_DIST_ID"
