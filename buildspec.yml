@@ -1,0 +1,23 @@
+version: 0.2
+env:
+  variables:
+    hugo_version: "0.79.0"
+  parameter-store:
+    BUCKET_NAME: "BLOG_S3_BUCKET_NAME"
+    CF_DIST_ID: "BLOG_CF_DIST_ID"
+phases:
+  install:
+    runtime-versions:
+      golang: 1.15
+    commands:
+      - curl -Ls https://github.com/gohugoio/hugo/releases/download/v${hugo_version}/hugo_extended_${hugo_version}_Linux-64bit.tar.gz -o /tmp/hugo.tar.gz
+      - tar xf /tmp/hugo.tar.gz -C /tmp
+      - mv /tmp/hugo /usr/bin/hugo
+      - rm -rf /tmp/hugo*
+  build:
+    commands:
+      - hugo --minify
+  post_build:
+    commands:
+      - aws s3 sync --delete public/ s3://$BUCKET_NAME
+      - aws cloudfront create-invalidation --distribution-id $CF_DIST_ID --paths "/*"
