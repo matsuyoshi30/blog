@@ -5,7 +5,6 @@ title = "memoyoshi"
 theme = "harbor"
 paginate = 5
 hasCJKLanguage = true
-googleAnalytics = "UA-145873405-1"
 
 [params]
   mainSections = ["post"]
