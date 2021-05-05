@@ -2,9 +2,6 @@ version: 0.2
 env:
   variables:
     hugo_version: "0.58.0"
-  parameter-store:
-    BUCKET_NAME: "BLOG_S3_BUCKET_NAME"
-    CF_DIST_ID: "BLOG_CF_DIST_ID"
 phases:
   install:
     runtime-versions:
@@ -19,5 +16,5 @@ phases:
       - hugo --minify
   post_build:
     commands:
-      - aws s3 sync --delete public/ s3://$BUCKET_NAME
-      - aws cloudfront create-invalidation --distribution-id $CF_DIST_ID --paths "/*"
+      - aws s3 sync --delete public/ s3://${BLOG_S3_BUCKET_NAME}
+      - aws cloudfront create-invalidation --distribution-id ${BLOG_CF_DIST_ID} --paths "/*"
