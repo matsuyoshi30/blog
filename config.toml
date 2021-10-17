@@ -25,7 +25,7 @@ hasCJKLanguage = true
 	page = "/:filename/"
 
 [outputs]
-  section = ["JSON", "HTML"]
+  page = ["JSON", "HTML"]
 
 [taxonomies]
   tag = "tags"
