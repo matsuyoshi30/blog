@@ -82,7 +82,7 @@ module.exports = {
 
 ### go template も整形したい
 
-Prettier 導入を検討し始めたのは、 HTML の <head> タグ内を修正する PR をもらったとき、 <script> タグ内のコードスタイルが気に入らなかったのがきっかけだった。 Prettier は HTML 形式もサポートしているが、 Hugo のテーマということで HTML 内には mustache 記法（`{{.}}`で書くテンプレートの記法）がたくさんあり、このまま Prettier を実行すると mustache 部分が普通の HTML タグ内文字列として改行なしで一行になってしまう。
+Prettier 導入を検討し始めたのは、 HTML の `<head>` タグ内を修正する PR をもらったとき、 `<script>` タグ内のコードスタイルが気に入らなかったのがきっかけだった。 Prettier は HTML 形式もサポートしているが、 Hugo のテーマということで HTML 内には mustache 記法（`{{.}}`で書くテンプレートの記法）がたくさんあり、このまま Prettier を実行すると mustache 部分が普通の HTML タグ内文字列として改行なしで一行になってしまう。
 
 `.prettierrc.js`で設定できるオプションでなんとかならないかと調べていたら、ある時期から Prettier のコア部分で新たにサポートする形式を増やすのではなく、[プラグインで対応する方針に変わった](https://github.com/prettier/prettier/issues/6034#issuecomment-647406368)ようで、 [go template 用のプラグイン](https://github.com/NiklasPor/prettier-plugin-go-template)があった。プラグインを導入して README に書かれている通りに`.prettierrc.js`に追記することで対応。
 
