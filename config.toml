@@ -21,11 +21,11 @@ hasCJKLanguage = true
   name = "matsuyoshi30"
 
 [permalinks]
-	post = "/:year/:month/:day/:filename/"
+	post = "/posts/:year/:month/:day/:filename/"
 	page = "/:filename/"
 
 [outputs]
-  page = ["JSON", "HTML"]
+  section = ["JSON", "HTML"]
 
 [taxonomies]
   tag = "tags"
