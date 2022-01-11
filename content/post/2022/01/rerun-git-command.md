@@ -70,6 +70,12 @@ n | 6 6 5 4 3 3 2 3
 
 git では [levenshtein.c](https://github.com/git/git/blob/e83ba647f7c61cf945690d6a0bd8c172a6498dc8/levenshtein.c) でこのアルゴリズムが実装されている。挿入・削除・置換・転置の操作それぞれに対して重みを付けられるよう引数が設けられていて、[これを利用している箇所](https://github.com/git/git/blob/e83ba647f7c61cf945690d6a0bd8c172a6498dc8/help.c#L606)でもすべての操作が同じコストではなく重み付けがされている。
 
+## おわりに
+
+これで [reg](https://github.com/matsuyoshi30/reg) の README にあるとおり、 `git status` を `git statu` に typo して実行しても、直後に `reg` を実行すれば `git status` を実行してくれるようになった。
+
+なお普段は `git status` を `gs` に alias しているので使わない模様。「レーベンシュタイン距離」という単語を見て遊びで作ったが、シェルの履歴周り、特に bash の history file 書き込みタイミングなんかは知らなかったので勉強になった。
+
 ## 参考
 
 - [zsh FAQ 3.21](https://zsh.sourceforge.io/FAQ/zshfaq03.html#l38)
