@@ -1,5 +1,5 @@
 +++
-title = "2023振り返り"
+title = "2023年振り返り"
 date = 2023-12-31T15:30:08+09:00
 tags = ["letters"]
 draft = false
